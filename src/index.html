@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Mornington Crescent Interactive Debugger</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="util.js"></script>
+  <script src="tubemap.js"></script>
+  <script src="interpreter.js"></script>
+  <script>
+window.onload = () => {
+    let mc = new Interpreter;
+    mc.load().then(() => {
+        // Autorun by commenting in the following line
+        //mc.run();
+    });
+};
+  </script>
+ </head>
+ <body>
+  <h1>Mornington Crescent Interactive Debugger</h1>
+  <div class="interface">
+   <div contenteditable="true" id="mcresc-code"></div>
+   <div class="debugger">
+    <a href="#" title="Reset" id="mcresc-reset"></a>
+    <a href="#" title="Step into" id="mcresc-step"></a>
+    <a href="#" title="Run" id="mcresc-run"></a>
+    <ul>
+     <li><span id="mcresc-dp"></span></li>
+     <li>Acc: <span id="mcresc-acc"></span></li>
+     <li><strong>Memory</strong>
+      <ul id="mcresc-mem"></ul>
+    </ul>
+   </div>
+   <div id="mcresc-output"></div>
+  </div>
+  <div id="mcresc-map"></div>
+ </body>
+</html>

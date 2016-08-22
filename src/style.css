@@ -1,0 +1,112 @@
+body {
+    font-family: sans-serif;
+}
+h1 {
+    font-size: 1.4em;
+    text-align: center;
+}
+.interface {
+    border: 1px solid black;
+    padding: 0;
+}
+#mcresc-code {
+    height: 200px;
+    overflow: auto;
+    width: 78%;
+    font-family: monospace;
+    float: left;
+    border-right: 1px solid black;
+    padding: 10px 1%;
+}
+#mcresc-code .code-line {
+}
+#mcresc-code .code-line.current {
+    background: #ff6;
+}
+#mcresc-code .code-line .comment {
+    color: #999;
+}
+#mcresc-code .code-line .route {
+    color: #3b3;
+}
+#mcresc-code .code-line .station {
+    color: #33f;
+}
+#mcresc-step, #mcresc-run, #mcresc-reset {
+    color: black;
+    text-decoration: none;
+    font-size: 2em;
+}
+#mcresc-reset:before {
+    content: '\23ea';
+}
+#mcresc-step:before {
+    content: '\23ef';
+}
+#mcresc-step.disabled:before,
+#mcresc-reset.disabled:before {
+    color: #999;
+}
+#mcresc-run:before {
+    content: '\23f5';
+}
+#mcresc-run.running:before {
+    content: '\23f8';
+}
+.debugger {
+    width: 18%;
+    height: 220px;
+    overflow: auto;
+    padding: 0 1% 0 0;
+    float: right;
+}
+.debugger ul {
+    list-style: none inside;
+    margin: 0;
+    padding: 0;
+}
+#mcresc-acc, .debugger .value {
+    font-family: monospace;
+    background: #eee;
+}
+#mcresc-output {
+    clear: both;
+    border-top: 1px solid black;
+    padding: 1em;
+    color: #3b3;
+}
+#mcresc-output.error {
+    color: #d33;
+}
+
+#mcresc-map {
+    position: relative;
+    min-height: 200px;
+}
+#mcresc-map #map-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    background: rgba(0, 0, 0, 0.125);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3em;
+    z-index: 3;
+}
+#mcresc-map svg {
+    width: 100%;
+    height: auto;
+}
+#mcresc-map text {
+    font-size: 3pt;
+}
+#mcresc-map .segment-inactive,
+#mcresc-map g[id^=cab] path {
+    stroke: #ddd;
+}
+#mcresc-map .segment-active {
+    stroke-width: 5;
+}
